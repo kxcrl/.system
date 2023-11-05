@@ -47,6 +47,10 @@
     enable = true;
     controlPath = "none";
   };
+  
+  programs.waybar = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;

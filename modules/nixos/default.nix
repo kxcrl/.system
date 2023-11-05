@@ -110,7 +110,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    eww
     gcc
     hyprland
     hyprpaper
@@ -120,6 +119,7 @@
     pciutils
     rofi-wayland
     ripgrep
+    waybar
     wget
   ];
 
