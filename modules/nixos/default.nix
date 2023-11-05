@@ -110,15 +110,19 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    brightnessctl
+    dunst
     gcc
     hyprland
-    hyprpaper
     hyprpicker
+    libnotify
     neofetch
     neovim
+    networkmanagerapplet
     pciutils
     rofi-wayland
     ripgrep
+    swww
     waybar
     wget
   ];
