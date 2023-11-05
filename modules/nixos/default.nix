@@ -36,9 +36,14 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
+  # Enable SDDM login screen
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
+  # services.xserver.desktopManager.plasma5.enable = true;
+
+  # Enable Hyprland
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -62,7 +67,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -105,9 +110,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    eww
     gcc
+    hyprland
+    hyprpaper
+    hyprpicker
+    neofetch
     neovim
     pciutils
+    rofi-wayland
     ripgrep
     wget
   ];
