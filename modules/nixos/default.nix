@@ -15,6 +15,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.networkmanager.insertNameservers = [ "1.1.1.1" ];
+  networking.wireless.iwd.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
