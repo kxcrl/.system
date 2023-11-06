@@ -125,6 +125,7 @@
     swww
     waybar
     wget
+    wl-clipboard
   ];
 
   # ssh.startAgent = true;
