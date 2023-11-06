@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
+let
+  impermanence = builtins.fetchTarball {
+    sha256 = "sha256:120775fbfar2x1s5ijkxnvb8p0mmk3dlbq0lzfhsi0csfynp98ki";
+    url = "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+  };
+in
 {
+  imports = [ "${impermanence}/nixos.nix" ]; 
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -109,6 +117,14 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+    # this folder is where the files will be stored (don't put it in tmpfs)
+  environment.persistence."/nix/persist/system" = { 
+    directories = [
+      "/etc/nixos"    # bind mounted from /nix/persist/system/etc/nixos to /etc/nixos
+      "/etc/NetworkManager"
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
