@@ -13,6 +13,11 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable sound
+  # boot.extraModprobeConfig = ''
+    # options snd-intel-dspcfg dsp_driver=1
+  # '';
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -69,20 +74,21 @@ in
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  sound.enable = false;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
+    audio.enable = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    # media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -92,7 +98,7 @@ in
   users.users.kai = {
     isNormalUser = true;
     description = "kai";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "audio" "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
       git
@@ -132,13 +138,16 @@ in
     brightnessctl
     dunst
     gcc
+    helvum
     hyprland
     hyprpicker
     libnotify
     neofetch
     neovim
     networkmanagerapplet
+    pavucontrol
     pciutils
+    pulseaudio
     rofi-wayland
     ripgrep
     swww
