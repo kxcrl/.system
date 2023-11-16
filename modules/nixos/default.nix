@@ -77,6 +77,11 @@ in
   services.printing.enable = true;
 
   # Enable sound with pipewire.
+  hardware = {
+    # bluetooth.enable = true;
+    enableAllFirmware = true;
+    enableRedistributableFirmware = true;
+  };
   security.rtkit.enable = true;
   sound.enable = lib.mkForce false; #disable alsa
   hardware.pulseaudio.enable = lib.mkForce false; #disable pulseAudio
