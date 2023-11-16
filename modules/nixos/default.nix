@@ -20,9 +20,9 @@ in
     device = "nodev";
     efiSupport = true;
     # configurationLimit = 10;
-    # extraConfig = ''
-      # acpi /acpi/ssdt-csc3551.aml
-    # '';
+    extraConfig = ''
+      acpi /ssdt-csc3551.aml
+    '';
   };
 
   # Kernel
