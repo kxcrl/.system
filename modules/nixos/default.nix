@@ -9,9 +9,21 @@ in
 {
   imports = [ "${impermanence}/nixos.nix" ]; 
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  # Bootloader
   boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
+  # ACPI patch for ASUS UM3504D harmon/kardon CSC3551 I2C speakers
+  # See: https://discourse.nixos.org/t/asus-zenbook-no-sound-output/29326
+  boot.loader.grub = {
+    # enable = true;
+    device = "nodev";
+    efiSupport = true;
+    # configurationLimit = 10;
+    # extraConfig = ''
+      # acpi /acpi/ssdt-csc3551.aml
+    # '';
+  };
 
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
