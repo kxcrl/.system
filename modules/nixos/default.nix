@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   impermanence = builtins.fetchTarball {
@@ -74,21 +74,16 @@ in
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = false;
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  sound.enable = lib.mkForce false; #disable alsa
+  hardware.pulseaudio.enable = lib.mkForce false; #disable pulseAudio
   services.pipewire = {
     enable = true;
+    wireplumber.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    audio.enable = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    # media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
