@@ -5,6 +5,10 @@ let
     sha256 = "sha256:120775fbfar2x1s5ijkxnvb8p0mmk3dlbq0lzfhsi0csfynp98ki";
     url = "https://github.com/nix-community/impermanence/archive/master.tar.gz";
   };
+
+  realtek-kernel-module = pkgs.callPackage ../patches/realtek-kernel-module.nix {
+    kernel = config.boot.kernelPackages.kernel;
+  };
 in
 {
   imports = [ "${impermanence}/nixos.nix" ]; 
@@ -27,6 +31,12 @@ in
 
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.extraModulePackages = [
+    (realtek-kernel-module.overrideAttrs (_: {
+      patches = [ ../patches/0001-Patch-UM3504D.patch ];
+    }))
+  ];
 
   # Enable sound
   # boot.extraModprobeConfig = ''
