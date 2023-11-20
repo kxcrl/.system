@@ -167,6 +167,7 @@ in
     gcc
     helvum
     hyprland
+    hyprpaper
     hyprpicker
     libnotify
     neofetch
@@ -177,7 +178,6 @@ in
     pulseaudio
     rofi-wayland
     ripgrep
-    swww
     waybar
     wget
     wl-clipboard
