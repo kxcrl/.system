@@ -100,9 +100,10 @@ in
 
   # Enable sound with pipewire.
   hardware = {
-    # bluetooth.enable = true;
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
+    bluetooth.enable = true; # enables support for Bluetooth
+    bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   };
   security.rtkit.enable = true;
   sound.enable = lib.mkForce false; #disable alsa
