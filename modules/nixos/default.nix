@@ -141,8 +141,9 @@ in
   
 
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
+    noto-fonts-cjk-sans
   ];
 
   # Allow experimental features: nix-command, flakes
