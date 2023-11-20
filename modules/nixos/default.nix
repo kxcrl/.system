@@ -126,6 +126,7 @@ in
     description = "kai";
     extraGroups = [ "audio" "networkmanager" "wheel" ];
     packages = with pkgs; [
+      blender
       firefox
       git
       htop
