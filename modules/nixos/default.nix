@@ -185,6 +185,7 @@ in
     pulseaudio
     rofi-wayland
     ripgrep
+    unzip
     waybar
     wget
     wl-clipboard
