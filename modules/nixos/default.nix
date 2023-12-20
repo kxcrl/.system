@@ -138,6 +138,10 @@ in
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   users.users.kai.useDefaultShell = true;
+
+  programs.thunar.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
   
 
 
