@@ -14,6 +14,9 @@
 
     sessionVariables = {
       EDITOR = "nvim";
+      GTK_IM_MODULE = "fcitx\5";
+      QT_IM_MODULE = "fcitx\5";
+      XMODIFIERS = "@im=fcitx\5";
     };
 
     stateVersion = "23.05";
