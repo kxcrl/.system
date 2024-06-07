@@ -81,6 +81,9 @@
             && exec $SHELL
         '';
       };
+    initExtra = ''
+      . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];

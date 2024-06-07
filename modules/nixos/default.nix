@@ -180,6 +180,7 @@ in
   environment.systemPackages = with pkgs; [
     acpi
     acpica-tools
+    asdf-vm
     brightnessctl
     dunst
     gcc
