@@ -74,7 +74,7 @@ in
     LC_TIME = "ja_JP.UTF-8";
   };
 
-# Enable Japanese input
+  # Enable Japanese input
   i18n.inputMethod.enabled = "fcitx5";
   i18n.inputMethod.fcitx5.addons = with pkgs; [
     fcitx5-mozc
@@ -135,7 +135,7 @@ in
   users.users.kai = {
     isNormalUser = true;
     description = "kai";
-    extraGroups = [ "audio" "networkmanager" "wheel" ];
+    extraGroups = [ "audio" "docker" "networkmanager" "wheel" ];
     packages = with pkgs; [
       blender
       firefox
@@ -222,6 +222,9 @@ in
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Enable Docker virtualization.
+  virtualisation.docker.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
