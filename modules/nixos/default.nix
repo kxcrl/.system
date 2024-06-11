@@ -193,6 +193,7 @@ in
     neofetch
     neovim
     networkmanagerapplet
+    nodePackages_latest.pnpm
     pavucontrol
     pciutils
     pulseaudio
