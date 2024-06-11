@@ -98,9 +98,9 @@ in
   programs.hyprland.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "colemak";
+    variant = "colemak";
   };
 
   # Configure console keymap

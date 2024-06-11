@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   nixpkgs = {
@@ -14,13 +14,19 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      GTK_IM_MODULE = "fcitx\5";
       QT_IM_MODULE = "fcitx\5";
       XMODIFIERS = "@im=fcitx\5";
     };
 
     stateVersion = "23.05";
+
+    # Run any additional commands on system startup
+    # activation = {
+    #   extraActions = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    #   '';
+    # };
   };
+
   
   services.mpd = {
     enable = true;
