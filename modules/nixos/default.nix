@@ -189,6 +189,7 @@ in
     hyprland
     hyprpaper
     hyprpicker
+    inotify-tools
     libnotify
     neofetch
     neovim
