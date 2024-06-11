@@ -183,6 +183,7 @@ in
     asdf-vm
     brightnessctl
     dunst
+    elixir_1_15
     gcc
     helvum
     hyprland
