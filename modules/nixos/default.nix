@@ -185,6 +185,7 @@ in
     dunst
     elixir_1_15
     gcc
+    gnumake
     helvum
     hyprland
     hyprpaper
