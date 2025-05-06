@@ -186,12 +186,16 @@ in
     elixir_1_15
     gcc
     gnumake
+    grim
     helvum
     hyprland
     hyprpaper
     hyprpicker
     inotify-tools
+    kubectl
     libnotify
+    mongodb-tools
+    mongosh
     neofetch
     neovim
     networkmanagerapplet
@@ -201,6 +205,8 @@ in
     pulseaudio
     rofi-wayland
     ripgrep
+    ruby
+    slurp
     unzip
     waybar
     wget
